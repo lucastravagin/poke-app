@@ -9,6 +9,6 @@ module.exports = function(server) {
 
 
     const pokemonService = require('../api/pokemon/pokemon.service')
-    pokemonService.register(router, '/billingCycles')
+    pokemonService.register(router, '/pokemons')
 
 }
