@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="pokeApp">
 
 <head>
     <meta charset="UTF-8">
@@ -12,10 +12,12 @@
 
 <body class="xp-vertical">
     <div id="xp-container">
-        <header class="" ng-include="'/template/header/header.html'"></header>
-        <aside class="" ng-include="'/template/header/menu.html'"></aside>
-        <div class="content-wrapper" ui-view></div>
-        <footer class="" ng-include="'/template/header/footer.html'"></footer>
+        <aside class="xp-leftbar" ng-include="'/template/menu.html'"></aside>
+        <div class="xp-rightbar">
+            <header class="xp-topbar" ng-include="'/template/header.html'"> </header>
+            <div class="xp-contentbar" ui-view></div>
+            <footer class="xp-footerbar" ng-include="'/template/footer.html'"> </footer>
+        </div>
     </div>
     <script src="/assets/js/deps.min.js"></script>
     <script src="/assets/js/app.min.js"></script>
