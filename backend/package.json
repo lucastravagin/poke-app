@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon",
+        "dev": "nodemon loader.js",
         "production": "pm2 start loader.js --name backend-pokemon"
     },
     "keywords": [],
