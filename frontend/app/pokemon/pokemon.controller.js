@@ -39,6 +39,7 @@
             })
         }
 
+        //Cria o pokemon
         vm.createPokemon = () => {
             $http.post(url, vm.pokemon).then((resp) => {
                 vm.pokemon = {}
@@ -49,6 +50,8 @@
                 msgs.addError(resp.data.errors)
             })
         }
+
+
 
         vm.addAtack = function(index) {
             vm.pokemon.atacks.splice(index + 1, 0, {})
@@ -71,11 +74,15 @@
 
 
 
-        vm.showTabUpdate = () => {
+        vm.showTabUpdate = (pokemon) => {
+            vm.pokemon = pokemon
+            initAtackAndDefense()
             tabs.show(vm, { tabUpdate: true })
         }
 
-        vm.showTabDelete = () => {
+        vm.showTabDelete = (pokemon) => {
+            vm.pokemon = pokemon
+            initAtackAndDefense()
             tabs.show(vm, { tabDelete: true })
         }
 
