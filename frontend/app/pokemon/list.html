@@ -1,3 +1,5 @@
+<input type="text" class="form-control" ng-model="$ctrl.criteria" placeholder="Pesquisar">
+<br/>
 <div class="box-body">
     <table class="table">
         <thead>
@@ -10,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="pokemon in $ctrl.pokemons">
+            <tr ng-repeat="pokemon in $ctrl.pokemons | filter: criteria ">
                 <td><img ng-src="{{ pokemon.urlImage }}" style="width: 64px; height: 64px;" class="rounded-circle img-fluid" alt="Foto Pokemon"></td>
                 <td>{{:: pokemon.name }}</td>
                 <td>{{:: pokemon.element }}</td>
@@ -20,6 +22,7 @@
                     <button class="btn btn-danger" ng-click="$ctrl.showTabDelete(pokemon)"><i class="fa fa-trash-o"></i></button>
                 </td>
             </tr>
+            {{$ctrl.criteria}}
         </tbody>
     </table>
 </div>
