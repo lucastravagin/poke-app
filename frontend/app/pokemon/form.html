@@ -17,6 +17,7 @@
                         <option>Água</option>
                         <option>Fogo</option>
                         <option>Planta</option>
+                        <option>Raio</option>
                         <option>Terra</option>
                         <option>Psíquico</option>
                       </select>
@@ -52,9 +53,9 @@
     </div>
     <hr>
     <div class="box-footer">
-        <button class="btn btn-primary" ng-click="createBillingCycle()" ng-if="$ctrl.tabCreate">Incluir</button>
-        <button class="btn btn-info" ng-click="updateBillingCycle()" ng-if="$ctrl.tabUpdate">Alterar</button>
-        <button class="btn btn-danger" ng-click="deleteBillingCycle()" ng-if="$ctrl.tabDelete">Excluir</button>
+        <button class="btn btn-primary" ng-click="$ctrl.createPokemon()" ng-if="$ctrl.tabCreate">Incluir</button>
+        <button class="btn btn-info" ng-click="$ctrl.updatePokemon()" ng-if="$ctrl.tabUpdate">Alterar</button>
+        <button class="btn btn-danger" ng-click="deletePokemon()" ng-if="$ctrl.tabDelete">Excluir</button>
         <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
     </div>
 </div>

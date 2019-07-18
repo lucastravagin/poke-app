@@ -4,11 +4,12 @@
         'tabs',
         '$http',
         'consts',
+        'msgs',
         PokemonController
 
     ])
 
-    function PokemonController(tabs, $http, consts) {
+    function PokemonController(tabs, $http, consts, msgs) {
 
         const vm = this
         const url = `${consts.apiUrl}/pokemons`
@@ -33,14 +34,19 @@
                 vm.pokemon = {}
                 initAtackAndDefense()
                 tabs.show(vm, { tabList: true, tabCreate: true })
+            }).catch((resp) => {
+                msgs.addError(resp.data.errors)
             })
         }
 
         vm.createPokemon = () => {
             $http.post(url, vm.pokemon).then((resp) => {
-                vm.billingCycle = {}
-            }).catch((err) => {
-
+                vm.pokemon = {}
+                initAtackAndDefense()
+                vm.getPokemons()
+                msgs.addSuccess('Pokemon Cadastrado com sucesso')
+            }).catch((resp) => {
+                msgs.addError(resp.data.errors)
             })
         }
 
