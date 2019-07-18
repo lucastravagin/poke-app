@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-6">
             <div class="text-center">
-                <img src="/assets/image-thumbnail.jpg" alt="Imagem do Pokemon" class="img-thumbnail">
+                <img ng-src="{{ $ctrl.pokemon.urlImage || '/assets/image-thumbnail.jpg' }} " alt="Imagem do Pokemon" class="img-thumbnail">
             </div>
         </div>
     </div>

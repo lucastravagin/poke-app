@@ -8,16 +8,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr ng-repeat="atack in $ctrl.pokemon.atacks">
                 <td>
-                    <input type="text" class="form-control" placeholder="Ataque">
+                    <input ng-model="atack.nameAtack" type="text" class="form-control" placeholder="Ataque">
                 </td>
                 <td>
-                    <input type="number" min="0" max="100" class="form-control" placeholder="SP">
+                    <input ng-model="atack.spAtack" type="number" min="0" max="100" class="form-control" placeholder="SP">
                 </td>
                 <td style="width:140px;">
-                    <button class="btn btn-success"><i class="fa fa-plus"></i></button>
-                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                    <button ng-click="$ctrl.addAtack($index)" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                    <button ng-click="$ctrl.deleteAtack($index)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
                 </td>
             </tr>
         </tbody>

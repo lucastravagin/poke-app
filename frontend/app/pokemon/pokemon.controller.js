@@ -14,9 +14,10 @@
         const url = `${consts.apiUrl}/pokemons`
 
         let initAtackAndDefense = () => {
-            if (!vm.pokemon.atack || !vm.pokemon.atack.length) {
-                vm.pokemon.atack = []
-                vm.pokemon.atack.push({})
+            console.log()
+            if (!vm.pokemon.atacks || !vm.pokemon.atacks.length) {
+                vm.pokemon.atacks = []
+                vm.pokemon.atacks.push({})
             }
 
             if (!vm.pokemon.defense || !vm.pokemon.defense.length) {
@@ -43,7 +44,24 @@
             })
         }
 
+        vm.addAtack = function(index) {
+            vm.pokemon.atacks.splice(index + 1, 0, {})
+        }
 
+        vm.deleteAtack = function(index) {
+            vm.pokemon.atacks.splice(index, 1)
+            initAtackAndDefense()
+        }
+
+        vm.addDef = function(index) {
+            vm.pokemon.defense.splice(index + 1, 0, { name: null, value: null })
+        }
+
+
+        vm.deleteDef = function(index) {
+            vm.pokemon.defense.splice(index, 1)
+            initAtackAndDefense()
+        }
 
 
 

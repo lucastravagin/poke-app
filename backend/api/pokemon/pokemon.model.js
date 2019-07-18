@@ -16,7 +16,7 @@ const pokemonSchema = new mongoose.Schema({
     name: { type: String, required: true },
     element: { type: String, required: true },
     speed: { type: Number, min: 0, max: 100, required: true },
-    atack: [atackSchema],
+    atacks: [atackSchema],
     defense: [defSchema]
 })
 

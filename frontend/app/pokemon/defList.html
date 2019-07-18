@@ -8,16 +8,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr ng-repeat="def in $ctrl.pokemon.defense">
                 <td>
-                    <input type="text" class="form-control" placeholder="Defesa">
+                    <input ng-model="def.nameDef" type="text" class="form-control" placeholder="Defesa">
                 </td>
                 <td>
-                    <input type="number" min="0" max="100" class="form-control" placeholder="SP">
+                    <input ng-model="def.spDef" type="number" min="0" max="100" class="form-control" placeholder="SP">
                 </td>
                 <td style="width:140px;">
-                    <button class="btn btn-success"><i class="fa fa-plus"></i></button>
-                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                    <button ng-click="$ctrl.addDef($index)" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                    <button ng-click="$ctrl.deleteDef($index)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
                 </td>
             </tr>
         </tbody>
