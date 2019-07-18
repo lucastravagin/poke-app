@@ -8,10 +8,12 @@
     function DashboardController($http, consts) {
         const vm = this
 
-        vm.datas = { pokemons: 2.852 }
 
         vm.getSummary = function() {
-            vm.total = vm.datas
+            $http.get(`${consts.apiUrl}/pokemons/count`).then(function(resp) {
+                console.log(resp)
+                vm.total = resp.data
+            })
         }
 
         vm.getSummary()

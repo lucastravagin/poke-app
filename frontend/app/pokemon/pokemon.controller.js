@@ -51,7 +51,18 @@
             })
         }
 
-
+        vm.updatePokemon = () => {
+            const urlUpdate = `${consts.apiUrl}/pokemons/${vm.pokemon._id}`
+            $http.put(urlUpdate, vm.pokemon).then((resp) => {
+                vm.pokemon = {}
+                initAtackAndDefense()
+                vm.getPokemons()
+                tabs.show(vm, { tabList: true, tabCreate: true })
+                msgs.addSuccess('Pokemon alterado com sucesso')
+            }).catch((resp) => {
+                msgs.addError(resp.data)
+            })
+        }
 
         vm.addAtack = function(index) {
             vm.pokemon.atacks.splice(index + 1, 0, {})
