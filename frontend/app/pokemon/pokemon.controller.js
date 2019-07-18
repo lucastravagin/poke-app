@@ -51,6 +51,7 @@
             })
         }
 
+        //Alera o pokemon
         vm.updatePokemon = () => {
             const urlUpdate = `${consts.apiUrl}/pokemons/${vm.pokemon._id}`
             $http.put(urlUpdate, vm.pokemon).then((resp) => {
@@ -60,6 +61,20 @@
                 tabs.show(vm, { tabList: true, tabCreate: true })
                 msgs.addSuccess('Pokemon alterado com sucesso')
             }).catch((resp) => {
+                msgs.addError(resp.data)
+            })
+        }
+
+        //Exclui o pokemon
+        vm.deletePokemon = () => {
+            const urlDelete = `${consts.apiUrl}/pokemons/${vm.pokemon._id}`
+            $http.delete(urlDelete, vm.pokemon).then(function(resp) {
+                vm.pokemon = {}
+                initAtackAndDefense()
+                vm.getPokemons()
+                tabs.show(vm, { tabList: true, tabCreate: true })
+                msgs.addSuccess('Operação realizada com sucesso!')
+            }).catch(function(resp) {
                 msgs.addError(resp.data)
             })
         }
