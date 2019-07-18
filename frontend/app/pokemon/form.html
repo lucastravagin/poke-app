@@ -3,16 +3,16 @@
         <div class="col-lg-6">
             <form>
                 <div class="form-group">
-                    <input type="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Url da Imagem">
+                    <input ng-model="$ctrl.pokemon.urlImage" type="url" class="form-control" placeholder="Url da Imagem">
                     <small id="emailHelp" class="form-text text-muted">Exemplo: http://imagem.jpg</small>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Pokemon">
+                    <input ng-model="$ctrl.pokemon.name" type="text" class="form-control" placeholder="Nome do Pokemon">
                     <small id="emailHelp" class="form-text text-muted">Exemplo: Pikachu</small>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <select id="inputState" class="form-control">
+                        <select ng-model="$ctrl.pokemon.element" id="inputState" class="form-control">
                         <option selected>Elemento</option>
                         <option>Água</option>
                         <option>Fogo</option>
@@ -23,7 +23,7 @@
                         <small id="emailHelp" class="form-text text-muted">Exemplo: Raio</small>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="number" min="0" max="100" class="form-control" placeholder="Speed">
+                        <input ng-model="$ctrl.pokemon.speed" type="number" min="0" max="100" class="form-control" placeholder="Speed">
                         <small id="emailHelp" class="form-text text-muted">Exemplo:0 à 100</small>
                     </div>
                 </div>
